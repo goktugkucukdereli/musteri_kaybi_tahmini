@@ -1,0 +1,22 @@
+import pandas as pd
+
+# Ham veriyi yükleme
+raw_data_path = "data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv"
+df = pd.read_csv(raw_data_path)
+
+# Veri işleme adımları
+df['TotalCharges'] = pd.to_numeric(df['TotalCharges'], errors='coerce')
+df['TotalCharges'] = df['TotalCharges'].fillna(df['TotalCharges'].median())
+
+# Kategorik değişkenleri One-Hot Encoding ile dönüştürme
+categorical_columns = ['gender', 'Partner', 'Dependents', 'PhoneService', 
+                       'MultipleLines', 'InternetService', 'OnlineSecurity',
+                       'OnlineBackup', 'DeviceProtection', 'TechSupport',
+                       'StreamingTV', 'StreamingMovies', 'Contract',
+                       'PaperlessBilling', 'PaymentMethod', 'Churn']
+df = pd.get_dummies(df, columns=categorical_columns, drop_first=True)
+
+# İşlenmiş veriyi kaydetme
+processed_data_path = "data/processed/processed_data.csv"
+df.to_csv(processed_data_path, index=False)
+print(f"İşlenmiş veri kaydedildi: {processed_data_path}")

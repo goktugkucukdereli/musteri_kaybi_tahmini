@@ -1,0 +1,10 @@
+Feature,Importance
+Tenure,0.25
+MonthlyCharges,0.20
+TotalCharges,0.15
+InternetService,0.10
+Contract,0.08
+DeviceProtection,0.05
+StreamingMovies,0.03
+TechSupport,0.02
+OnlineSecurity,0.01

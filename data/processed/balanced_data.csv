@@ -1,0 +1,21 @@
+from imblearn.over_sampling import SMOTE
+from sklearn.model_selection import train_test_split
+import pandas as pd
+
+# İşlenmiş veriyi yükleme
+processed_data_path = "data/processed/processed_data.csv"
+df = pd.read_csv(processed_data_path)
+
+# Bağımlı ve bağımsız değişkenleri ayırma
+X = df.drop(columns=['Churn_Yes'])
+y = df['Churn_Yes']
+
+# SMOTE uygulama
+smote = SMOTE(random_state=42)
+X_balanced, y_balanced = smote.fit_resample(X, y)
+
+# Dengelenmiş veriyi kaydetme
+balanced_data_path = "data/processed/balanced_data.csv"
+balanced_df = pd.concat([pd.DataFrame(X_balanced), pd.DataFrame(y_balanced, columns=['Churn_Yes'])], axis=1)
+balanced_df.to_csv(balanced_data_path, index=False)
+print(f"Dengelenmiş veri kaydedildi: {balanced_data_path}")
