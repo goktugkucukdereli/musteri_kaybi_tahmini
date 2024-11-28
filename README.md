@@ -118,15 +118,21 @@ Bu projeyi, Telco müşteri verilerini analiz ederek müşteri kaybını (churn)
 ### 1. Performans Karşılaştırması
 Modellerin Accuracy, Precision, Recall ve F1-Score metriklerini Tableau’da görselleştirdim.
 
+![Model Performans Analizi](reports/performance_comparison.png)
+
 ---
 
 ### 2. Karışıklık Matrisi
 Gerçek ve tahmin edilen değerler için heatmap oluşturdum.
 
+![Karışıklık Matrisi Analizi](reports/confusion_matrix.png)
+
 ---
 
 ### 3. Özellik Önemi Analizi
 LightGBM ile en önemli 10 özelliği görselleştirdim.
+
+![Özellik Önemi Analizi](reports/feature_importance.png)
 
 ---
 
