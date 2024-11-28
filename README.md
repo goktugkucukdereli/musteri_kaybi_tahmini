@@ -27,35 +27,35 @@ Bu projeyi, Telco müşteri verilerini analiz ederek müşteri kaybını (churn)
    - **InternetService:** 10%
    - **Contract:** 8%
 
-3. Yeni verilerle yapılan tahminlerde müşteri kaybı oranı %28 olarak belirlendi.
-4. Performans, karışıklık matrisi ve özellik önemi analizleri Tableau ile görselleştirildi.
+3. Yeni verilerle yaptığım tahminlerde, müşteri kaybı oranını %28 olarak belirledim.
+4. Performans, karışıklık matrisi ve özellik önemi analizlerini Tableau kullanarak görselleştirdim.
 
 ---
 
 ## 📋 Projenin İçeriği
 
 1. **Veri Hazırlığı
-    - Eksik değerler dolduruldu ve kategorik değişkenler One-Hot Encoding yöntemiyle dönüştürüldü.
-    - `processed_data.csv` dosyasında saklanan işlenmiş veriler, model eğitimi için hazır hale getirildi.
+    - Eksik değerleri doldurdum ve kategorik değişkenleri One-Hot Encoding yöntemiyle dönüştürdüm.
+    - İşlenmiş verileri model eğitimi için `processed_data.csv` dosyasına kaydettim.
 
 2. **Sınıf Dengesizliği Giderme
-    - Churn sınıfındaki dengesizlik SMOTE (Synthetic Minority Oversampling Technique) yöntemiyle giderildi.
-    - Dengelenmiş veri, `balanced_data.csv` dosyasına kaydedildi.
+    - Churn sınıfındaki dengesizliği SMOTE (Synthetic Minority Oversampling Technique) yöntemiyle giderdim.
+    - Dengelenmiş veriyi `balanced_data.csv` dosyasına kaydettim.
 
 3. **Model Eğitimi
-    - Logistic Regression, Random Forest, XGBoost ve LightGBM gibi modeller eğitildi.
-    - Her model Accuracy, Precision, Recall ve F1-Score metrikleriyle değerlendirildi.
+    - Logistic Regression, Random Forest, XGBoost ve LightGBM gibi modelleri eğittim.
+    - Modelleri Accuracy, Precision, Recall ve F1-Score metrikleriyle değerlendirdim.
 
 4. **Özellik Önemi Analizi
-    - LightGBM modeli kullanılarak özelliklerin önem dereceleri hesaplandı.
-    - Sonuçlar `feature_importance.csv` dosyasına kaydedildi ve Tableau ile görselleştirildi.
+    - LightGBM modelini kullanarak özelliklerin önem derecelerini hesapladım.
+    - Analiz sonuçlarını `feature_importance.csv` dosyasına kaydettim ve Tableau ile görselleştirdim.
 
 5. **Yeni Verilerle Tahmin
-    - Eğitilen Random Forest modeli, yeni müşteri verileri üzerinde test edildi.
-    - Tahmin sonuçları `new_data_with_predictions.csv` dosyasına kaydedildi.
+    - Eğittiğim Random Forest modelini yeni müşteri verileri üzerinde test ettim.
+    - Tahmin sonuçlarını `new_data_with_predictions.csv` dosyasına kaydettim.
 
 6. **Görselleştirme
-    - Tableau kullanılarak performans metrikleri, karışıklık matrisi ve özellik önemi analizleri görselleştirildi.
+    - Performans metriklerini, karışıklık matrisini ve özellik önemi analizlerini Tableau kullanarak görselleştirdim.
 
 ---
 
@@ -63,13 +63,13 @@ Bu projeyi, Telco müşteri verilerini analiz ederek müşteri kaybını (churn)
 
 **Teknoloji**	          **Kullanım Amacı**
 - Python	                Veri analizi, modelleme ve tahmin işlemleri.
-- PostgreSQL	            Veri depolama ve sorgulama.
-- Tableau	                Veri görselleştirme.
+- PostgreSQL	          Veri depolama ve sorgulama.
+- Tableau	             Veri görselleştirme.
 - pandas	                Veri manipülasyonu ve analizi.
 - scikit-learn	          Makine öğrenimi modelleri ve değerlendirme.
-- imbalanced-learn	      SMOTE ile sınıf dengesizliği giderme.
-- xgboost	                XGBoost modeli için.
-- lightgbm	              LightGBM modeli ve özellik önemi analizi.
+- imbalanced-learn	    SMOTE ile sınıf dengesizliği giderme.
+- xgboost	             XGBoost modeli için.
+- lightgbm	             LightGBM modeli ve özellik önemi analizi.
 
 ---
 
@@ -180,4 +180,4 @@ musteri_kaybi_tahmin_modeli/
 ---
 
 ## 📜 Lisans
-Bu proje, MIT Lisansı ile lisanslanmıştır. Lisans detayları için LICENSE dosyasını inceleyebilirsiniz.
+Projeyi MIT Lisansı ile lisansladım. Lisans detayları için LICENSE dosyasını inceleyebilirsiniz.
